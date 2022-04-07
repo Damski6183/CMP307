@@ -54,7 +54,9 @@ namespace CMP307
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            software software = new software();
+            this.Hide();
+            software.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -97,6 +99,83 @@ namespace CMP307
             cmd.ExecuteNonQuery();
             MessageBox.Show("Successful. Hardware Item Erased.", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        bool ValidateE() //validate is to make sure the user doesnt add new hardware with no fields filled in.
+        {
+            bool returnval = true;
+            if (nameE.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (typeE.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (descE.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (versE.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (devE.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (licE.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (purchE.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (hwidE.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            return returnval; //notes is not checked because notes can be left empty
+        }
+
+        bool Validate() //validate is to make sure the user doesnt add new hardware with no fields filled in.
+        {
+            bool returnval = true;
+            if (nameN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (typeN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (descN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (verN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (devN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (licN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (purchN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (hwidN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            return returnval; //notes is not checked because notes can be left empty
+        }
+
     }
 }
     
