@@ -33,5 +33,11 @@ namespace CMP307
             software f = new software();
             f.ShowDialog(); // Shows software form
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            reports reports = new reports();
+            reports.ShowDialog();
+        }
     }
 }

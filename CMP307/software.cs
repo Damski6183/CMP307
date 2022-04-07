@@ -106,7 +106,7 @@ namespace CMP307
             {
 
                 connect con = new connect();
-                SqlCommand cmd = new SqlCommand($"INSERT INTO [dbo].[software] (name, type, description, version, developer, license, purchdate, hardwareid, notes) VALUES ('{nameN.Text}', '{typeN.Text}', '{descN.Text}', '{verN.Text}', '{devN.Text}', '{licN.Text}', '{purchN.Text}', '{hwidN.Text}', '{notesN.Text}')", con.Active());
+                SqlCommand cmd = new SqlCommand($"INSERT INTO [dbo].[softwaree] (name, type, description, version, developer, license, purchdate, hardwareid, notes) VALUES ('{nameN.Text}', '{typeN.Text}', '{descN.Text}', '{verN.Text}', '{devN.Text}', '{licN.Text}', '{purchN.Text}', '{hwidN.Text}', '{notesN.Text}')", con.Active());
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("successfully Added New Hardware Item.", "insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
