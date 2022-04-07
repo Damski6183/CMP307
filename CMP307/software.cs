@@ -100,6 +100,38 @@ namespace CMP307
             MessageBox.Show("Successful. Hardware Item Erased.", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void button4_Click(object sender, EventArgs e) // add record to software table
+        {
+            if (Validate())
+            {
+
+                connect con = new connect();
+                SqlCommand cmd = new SqlCommand($"INSERT INTO [dbo].[software] (name, type, description, version, developer, license, purchdate, hardwareid, notes) VALUES ('{nameN.Text}', '{typeN.Text}', '{descN.Text}', '{verN.Text}', '{devN.Text}', '{licN.Text}', '{purchN.Text}', '{hwidN.Text}', '{notesN.Text}')", con.Active());
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("successfully Added New Hardware Item.", "insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("An error occurred as there was an empty textbox.", "insert", MessageBoxButtons.OK);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (ValidateE())
+            {
+                connect con = new connect();
+                SqlCommand cmd = new SqlCommand(@"UPDATE [dbo].[software]
+                SET [name] = '" + nameE.Text + "',[type] = '" + typeE.Text + "',[description] = '" + descE.Text + "', [version] = '" + versE.Text + "',  [developer] = '" + devE.Text + "', [license] = '" + purchE.Text + "', [purchdate] = '" + hwidE.Text + "', [hardwareid] = '" + notesE.Text + "', [notes] = '" + purchE.Text + "' WHERE [ID] ='" + idE.Text + "'", con.Active());
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Successful update.", "Continue", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("An error occurred as there was an empty textbox.", "insert", MessageBoxButtons.OK);
+            }
+        }
+
         bool ValidateE() //validate is to make sure the user doesnt add new hardware with no fields filled in.
         {
             bool returnval = true;
@@ -175,7 +207,6 @@ namespace CMP307
             }
             return returnval; //notes is not checked because notes can be left empty
         }
-
     }
 }
     
