@@ -114,7 +114,84 @@ namespace CMP307
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            connect con = new connect();
+            SqlCommand cmd = new SqlCommand(@"DELETE FROM [dbo].[hardware] WHERE [ID] = '" + idD.Text + "'", con.Active());
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Successful. Hardware Item Erased.", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e) //new hardware input
+        {
+            if (Validate())
+            {
+                
+                connect con = new connect();
+                SqlCommand cmd = new SqlCommand($"INSERT INTO [dbo].[hardware] (id, name, type, description, model, manufacturer, mac, ip, location, purchasedate, warranty, notes) VALUES ('{unameN.Text}', '{typeN.Text}', '{descN.Text}', '{modelN.Text}', '{manuN.Text}', '{macN.Text}', '{ipN.Text}', '{locN.Text}', '{purchN.Text}', '{warrantyN.Text}', '{notesN.Text}')", con.Active());
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("successfully Added New Hardware Item.", "insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("An error occurred as there was an empty textbox.", "insert", MessageBoxButtons.OK);
+            }
+        }
+        bool Validate() //validate is to make sure the user doesnt add new user with no fields filled in.
+        {
+            bool returnval = true;
+            if (unameN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (typeN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (descN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (modelN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (manuN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (macN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (ipN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (locN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (purchN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            else if (warrantyN.Text.Length == 0)
+            {
+                returnval = false;
+            }
+            return returnval; //notes is not checked because notes can be left empty
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
