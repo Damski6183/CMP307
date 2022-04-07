@@ -43,10 +43,6 @@
             this.Warranty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Notes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
-            this.hardwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sql1802193DataSet = new CMP307.sql1802193DataSet();
-            this.hardwareTableAdapter = new CMP307.sql1802193DataSetTableAdapters.hardwareTableAdapter();
-            this.hardwareBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -99,6 +95,10 @@
             this.idD = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.hardwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sql1802193DataSet = new CMP307.sql1802193DataSet();
+            this.hardwareTableAdapter = new CMP307.sql1802193DataSetTableAdapters.hardwareTableAdapter();
+            this.hardwareBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hardwareBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sql1802193DataSet)).BeginInit();
@@ -207,25 +207,6 @@
             this.button1.Text = "Back up";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // hardwareBindingSource
-            // 
-            this.hardwareBindingSource.DataMember = "hardware";
-            this.hardwareBindingSource.DataSource = this.sql1802193DataSet;
-            // 
-            // sql1802193DataSet
-            // 
-            this.sql1802193DataSet.DataSetName = "sql1802193DataSet";
-            this.sql1802193DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // hardwareTableAdapter
-            // 
-            this.hardwareTableAdapter.ClearBeforeFill = true;
-            // 
-            // hardwareBindingSource1
-            // 
-            this.hardwareBindingSource1.DataMember = "hardware";
-            this.hardwareBindingSource1.DataSource = this.sql1802193DataSet;
             // 
             // button2
             // 
@@ -650,6 +631,26 @@
             this.button5.TabIndex = 53;
             this.button5.Text = "Refresh";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // hardwareBindingSource
+            // 
+            this.hardwareBindingSource.DataMember = "hardware";
+            this.hardwareBindingSource.DataSource = this.sql1802193DataSet;
+            // 
+            // sql1802193DataSet
+            // 
+            this.sql1802193DataSet.DataSetName = "sql1802193DataSet";
+            this.sql1802193DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hardwareTableAdapter
+            // 
+            this.hardwareTableAdapter.ClearBeforeFill = true;
+            // 
+            // hardwareBindingSource1
+            // 
+            this.hardwareBindingSource1.DataMember = "hardware";
+            this.hardwareBindingSource1.DataSource = this.sql1802193DataSet;
             // 
             // hardware
             // 
