@@ -207,6 +207,11 @@ namespace CMP307
             }
             return returnval; //notes is not checked because notes can be left empty
         }
+
+        private void software_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     

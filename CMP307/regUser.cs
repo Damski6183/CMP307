@@ -16,5 +16,17 @@ namespace CMP307
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            userhardware userhardware = new userhardware();
+            userhardware.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            usersoftware usersoftware = new usersoftware();
+            usersoftware.ShowDialog();
+        }
     }
 }

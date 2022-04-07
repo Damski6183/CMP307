@@ -510,6 +510,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "software";
             this.Text = "software";
+            this.Load += new System.EventHandler(this.software_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
