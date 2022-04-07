@@ -16,5 +16,22 @@ namespace CMP307
         {
             InitializeComponent();
         }
+
+        private void adminUser_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            hardware f = new hardware();
+            f.ShowDialog(); // Shows hardware form
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            software f = new software();
+            f.ShowDialog(); // Shows software form
+        }
     }
 }
