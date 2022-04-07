@@ -28,5 +28,11 @@ namespace CMP307
             usersoftware usersoftware = new usersoftware();
             usersoftware.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            reports reports = new reports();
+            reports.ShowDialog();
+        }
     }
 }

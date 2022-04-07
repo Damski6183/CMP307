@@ -45,7 +45,7 @@ namespace CMP307
 
         private void userhardware_Load(object sender, EventArgs e)
         {
-
+            Grid();
         }
 
         private void button1_Click(object sender, EventArgs e)

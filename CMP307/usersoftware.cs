@@ -20,7 +20,7 @@ namespace CMP307
         void Grid()
         {
             connect con = new connect();
-            SqlDataAdapter sda = new SqlDataAdapter("select * from software", con.Active());
+            SqlDataAdapter sda = new SqlDataAdapter("select * from softwaree", con.Active());
             DataTable dt = new DataTable();
             sda.Fill(dt);
             foreach (DataRow item in dt.Rows)
@@ -43,7 +43,7 @@ namespace CMP307
 
         private void usersoftware_Load(object sender, EventArgs e)
         {
-
+            Grid();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace CMP307
             {
                 //Decimal.TryParse(txtPrice.Text, out decimal result);
                 connect con = new connect();
-                SqlCommand cmd = new SqlCommand($"INSERT INTO [dbo].[swvulnerabilities] (swid, reason, hwid) VALUES ('{swid.Text}', '{reason.Text}', '{hwid.Text}')", con.Active());
+                SqlCommand cmd = new SqlCommand($"INSERT INTO [dbo].[swvulnerabilitiess] (swid, reason, hwid) VALUES ('{swid.Text}', '{reason.Text}', '{hwid.Text}')", con.Active());
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("successfully Added New Vulnerability report.", "insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

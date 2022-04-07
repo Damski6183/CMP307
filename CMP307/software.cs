@@ -22,7 +22,7 @@ namespace CMP307
         void Grid()
         {
             connect con = new connect();
-            SqlDataAdapter sda = new SqlDataAdapter("select * from software", con.Active());
+            SqlDataAdapter sda = new SqlDataAdapter("select * from softwaree", con.Active());
             DataTable dt = new DataTable();
             sda.Fill(dt);
             foreach (DataRow item in dt.Rows)
@@ -210,7 +210,7 @@ namespace CMP307
 
         private void software_Load(object sender, EventArgs e)
         {
-
+            Grid();
         }
     }
 }

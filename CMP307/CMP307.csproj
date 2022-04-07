@@ -85,6 +85,12 @@
     <Compile Include="regUser.Designer.cs">
       <DependentUpon>regUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reports.Designer.cs">
+      <DependentUpon>reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="software.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="regUser.resx">
       <DependentUpon>regUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports.resx">
+      <DependentUpon>reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="software.resx">
       <DependentUpon>software.cs</DependentUpon>
