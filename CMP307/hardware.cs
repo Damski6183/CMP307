@@ -114,7 +114,7 @@ namespace CMP307
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // delete hardware record by ID
         {
             connect con = new connect();
             SqlCommand cmd = new SqlCommand(@"DELETE FROM [dbo].[hardware] WHERE [ID] = '" + idD.Text + "'", con.Active());
@@ -124,12 +124,24 @@ namespace CMP307
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (Validate())
+            {
+                connect con = new connect();
+            SqlCommand cmd = new SqlCommand(@"UPDATE [dbo].[hardware]
+            SET [name] = '" + nameE.Text + "',[type] = '" + typeE.Text + "',[description] = '" + descE.Text + "', [model] = '" + modelE.Text + "',  [manufacturer] = '" + manuE.Text + "', [mac] = '" + macE.Text + "', [ip] = '" + ipE.Text + "', [location] = '" + locE.Text + "', [purchasedate] = '" + purchE.Text + "', [warranty] = '" + warrantyE.Text + "', [notes] = '" + notesE.Text + "' WHERE [ID] ='" + idE.Text + "'", con.Active());
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Successful update.", "Continue", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("An error occurred as there was an empty textbox.", "insert", MessageBoxButtons.OK);
+            }
 
         }
 
         private void button4_Click(object sender, EventArgs e) //new hardware input
         {
-            if (Validate())
+            if (ValidateE())
             {
                 
                 connect con = new connect();
@@ -141,8 +153,54 @@ namespace CMP307
             {
                 MessageBox.Show("An error occurred as there was an empty textbox.", "insert", MessageBoxButtons.OK);
             }
+
+            bool ValidateE() //validate is to make sure the user doesnt add new hardware with no fields filled in.
+            {
+                bool returnval = true;
+                if (nameE.Text.Length == 0)
+                {
+                    returnval = false;
+                }
+                else if (typeE.Text.Length == 0)
+                {
+                    returnval = false;
+                }
+                else if (descE.Text.Length == 0)
+                {
+                    returnval = false;
+                }
+                else if (modelE.Text.Length == 0)
+                {
+                    returnval = false;
+                }
+                else if (manuE.Text.Length == 0)
+                {
+                    returnval = false;
+                }
+                else if (macE.Text.Length == 0)
+                {
+                    returnval = false;
+                }
+                else if (ipE.Text.Length == 0)
+                {
+                    returnval = false;
+                }
+                else if (locE.Text.Length == 0)
+                {
+                    returnval = false;
+                }
+                else if (purchE.Text.Length == 0)
+                {
+                    returnval = false;
+                }
+                else if (warrantyE.Text.Length == 0)
+                {
+                    returnval = false;
+                }
+                return returnval; //notes is not checked because notes can be left empty
+            }
         }
-        bool Validate() //validate is to make sure the user doesnt add new user with no fields filled in.
+        bool Validate() //validate is to make sure the user doesnt add new hardware with no fields filled in.
         {
             bool returnval = true;
             if (unameN.Text.Length == 0)
